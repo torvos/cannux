@@ -1,2 +1,2 @@
 # cannux
-cannux is intended to be a sovereign and secure Canadian Linux distribution fork that will ensure a sovereign base operating system
+Cannux is an effort to build a sovereign Canadian Linux distribution: an operating system developed openly, governed transparently, and designed with Canadian interests in mind. The goal is not to reinvent everything from scratch, but to create a trusted, community-driven platform that Canadians can understand, audit, contribute to, and ultimately rely on. In an increasingly uncertain digital landscape, Canada should have the ability to control the software foundation that powers its public institutions, businesses, and citizens.

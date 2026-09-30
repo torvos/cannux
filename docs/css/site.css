@@ -10,6 +10,7 @@
   --hairline: #D8DDE1;
   --tint: #d9d9d9;
   --sans: 'Segoe UI', sans-serif;
+  --header-h: 86px;
   box-sizing: border-box;
   padding-top: env(safe-area-inset-top, 0px);
   padding-bottom: env(safe-area-inset-bottom, 0px);
@@ -22,7 +23,7 @@
 }
 
 html {
-  scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 16px);
+  scroll-padding-top: calc(var(--header-h) + env(safe-area-inset-top, 0px));
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -71,7 +72,6 @@ body {
 h1,
 h2,
 h3 {
-  font-family: var(--serif);
   line-height: 1.1;
   letter-spacing: -0.01em;
   margin: 0;
@@ -101,7 +101,7 @@ a:hover {
   color: var(--paper);
   padding: 10px 16px;
   border-radius: 4px;
-  z-index: 10;
+  z-index: 30;
   text-decoration: none;
 }
 
@@ -128,13 +128,29 @@ a:hover {
 }
 
 /* header */
+header.top {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 20;
+  background: var(--paper);
+  border-bottom: 1px solid var(--hairline);
+}
+
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  header.top {
+    background: color-mix(in srgb, var(--paper) 94%, transparent);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+}
+
 .topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .wordmark {
@@ -143,7 +159,6 @@ a:hover {
   gap: 10px;
   color: var(--ink);
   text-decoration: none;
-  font-family: var(--serif);
   font-weight: 750;
   font-size: 1.4rem;
   letter-spacing: -0.01em;
@@ -319,7 +334,7 @@ a:hover {
 
 .split>h2 {
   position: sticky;
-  top: 24px;
+  top: calc(var(--header-h) + env(safe-area-inset-top, 0px) + 24px);
 }
 
 .prose {
@@ -335,7 +350,6 @@ a:hover {
 }
 
 .prose .pull {
-  font-family: var(--serif);
   font-weight: 650;
   font-size: clamp(1.7rem, 1.2rem + 1.6vw, 2.3rem);
   line-height: 1.2;
@@ -365,7 +379,6 @@ a:hover {
 .pillar::before {
   content: counter(step);
   display: block;
-  font-family: var(--serif);
   font-weight: 800;
   font-size: 3.4rem;
   line-height: 1;
@@ -559,14 +572,29 @@ footer .note {
     padding: 56px 0;
   }
 
+  :root {
+    --header-h: 92px;
+  }
+
   .topbar {
     flex-direction: column;
     align-items: flex-start;
-    gap: 6px;
+    gap: 0;
+    padding-top: 8px;
+    padding-bottom: 6px;
+  }
+
+  .wordmark img {
+    width: 40px;
+    height: 40px;
   }
 
   .topbar nav {
     gap: 2px 18px;
+  }
+
+  .topbar nav a {
+    padding: 3px 0;
   }
 
   footer .row {

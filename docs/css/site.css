@@ -129,10 +129,11 @@
 
   @media (max-width: 700px) {
       .hero-image {
-          float: middle;
+          float: none;
           display: block;
-          width: 200px;
+          width: 300px;
           max-width: 60%;
+          margin: 0 auto 1.5rem;
       }
   }
 

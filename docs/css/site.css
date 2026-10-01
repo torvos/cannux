@@ -10,7 +10,7 @@
   --hairline: #D8DDE1;
   --tint: #d9d9d9;
   --sans: 'Segoe UI', sans-serif;
-  --header-h: 86px;
+  --header-h: 60px;
   box-sizing: border-box;
   padding-top: env(safe-area-inset-top, 0px);
   padding-bottom: env(safe-area-inset-bottom, 0px);
@@ -204,6 +204,17 @@ header.top {
 .topbar nav a:hover {
   border-bottom-color: var(--accent);
   color: var(--ink);
+}
+
+.topbar nav a.lang {
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  padding: 4px 14px;
+  line-height: 1.4;
+}
+
+.topbar nav a.lang:hover {
+  border-color: var(--ink);
 }
 
 /* hero */
@@ -573,7 +584,7 @@ footer .note {
   }
 
   :root {
-    --header-h: 92px;
+    --header-h: 60px;
   }
 
   .topbar nav {

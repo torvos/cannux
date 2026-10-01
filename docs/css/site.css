@@ -247,6 +247,13 @@ header.top {
   justify-self: center;
   width: 100%;
   max-width: 380px;
+  margin: 0;
+}
+
+.hero-art figcaption {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 0.95rem;
 }
 
 .hero-image {
@@ -368,6 +375,32 @@ header.top {
   color: var(--accent);
   max-width: 22ch;
   margin: 1.1em 0;
+}
+
+.prose .name-eq {
+  font-size: clamp(1.6rem, 1.1rem + 2.2vw, 2.4rem);
+  font-weight: 750;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin: 0 0 1.1em;
+}
+
+.name-eq .can {
+  color: var(--accent);
+}
+
+.name-eq .nux {
+  color: var(--ink);
+}
+
+.name-eq .rest,
+.name-eq .op {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.name-eq .op {
+  padding: 0 0.15em;
 }
 
 /* plan */
